@@ -1,0 +1,30 @@
+<div class="header">
+    <input type="text" [(ngModel)]="title" placeholder="Title...">
+    <button class="btn btn-secondary" class="addBtn" *ngIf="!isEditMode" (click)="addTask()">Add</button>
+    <button class="btn btn-secondary" class="addBtn" *ngIf="isEditMode" (click)="updateToDo()">Update</button>
+</div>
+<div>
+    <ul class="list-group">
+        <div cdkDropList (cdkDropListDropped)="drop($event)">
+           <div *ngFor="let todo of todos" cdkDrag> 
+            <li class="list-group-item" *ngIf="!todo.payload.doc.data().isCompleted">
+                <input class="form-check-input me-1" type="checkbox" [(ngModel)]="todo.payload.doc.data().isCompleted"
+                    (change)="markCompleted($event, todo)">
+                    {{ todo.payload.doc.data().title }}
+                <button class="btn btn-outline-danger btn-sm" (click)="removeToDo(todo.payload.doc.id)">Remove</button>
+                <button class="btn btn-edit btn-outline-primary btn-sm" (click)="editMode(todo)">Edit</button>
+
+            </li>
+           </div> 
+        </div>
+        <div *ngFor="let todo of todos">
+        <li class="list-group-item" *ngIf="todo.payload.doc.data().isCompleted"> 
+            <input class="form-check-input me-1" type="checkbox" [(ngModel)]="todo.payload.doc.data().isCompleted"
+                (change)="markCompleted($event, todo)">
+            {{ todo.payload.doc.data().title }}
+            <button class="btn btn-outline-danger btn-sm" (click)="removeToDo(todo.payload.doc.id)">Remove</button>
+            <button class="btn btn-edit btn-outline-primary btn-sm" (click)="editMode(todo)">Edit</button>
+        </li>
+        </div>
+    </ul>
+</div>

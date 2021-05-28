@@ -1,0 +1,143 @@
+div.container-fluid {
+    margin-bottom: 60px;
+}
+
+h2 {
+    margin-top: 20px;
+}
+
+p {
+    margin: 5px;
+}
+
+div.form-group {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+input {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.comment-paragraph {
+    font-size: 20px;
+    margin-bottom: 0px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center
+}
+
+.btn {
+    height: 20px;
+    width: 70px; 
+    padding: 1px;
+}
+
+.btn-danger {
+    margin: 0px;
+    margin-bottom: 10px;
+}
+
+.btn:hover {
+    margin-top: 0px;
+}
+
+.edit {
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.item {
+    margin: 0 auto;
+    margin-bottom: 10px;
+    border: 1px solid #E0E0E0;
+    border-radius: 10px;
+    max-width: 600px;
+    padding: 16px;   
+}
+
+div.completed > p {
+ color: #D3D3D3;
+ text-decoration: line-through;
+}
+
+.undo-complete {
+    margin-right: 10px;
+}
+
+.delete-complete {
+    margin-left: 10px;
+}
+
+textarea {
+    display: block;
+    margin: 0 auto;
+}
+
+.todo-edit-input {
+    margin-top: 10px;
+}
+
+label {
+  display: block;  
+}
+
+hr.item-divider {
+    width: 200px;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Media Queries start here */
+
+/* Boostrap Media Query Details
+Small devices (tablets, 768px and up)
+
+Medium devices (desktops, 992px and up)
+Note: Hamburger menu appears below 992px
+
+Large devices (large desktops, 1200px and up)
+*/
+
+@media(max-width: 992px) {
+    .item {
+        padding: 10px;
+    }
+
+    p.comment-paragraph {
+        font-size:  18px;
+    }
+
+    p.comment-info {
+        font-size: 12px;
+    }
+
+    .btn {
+        height: 40px;
+        width: 80px; 
+        font-size: 14px;
+    }
+
+    .edit {
+        margin-right: 30px;
+        margin-left: 30px;
+    }
+
+    .undo-complete {
+        margin-right: 20px;
+    }
+    
+    .delete-complete {
+        margin-left: 20px;
+    }
+}

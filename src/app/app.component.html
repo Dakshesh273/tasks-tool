@@ -1,0 +1,9 @@
+<div>
+  <nav *ngIf="isLogin" class="navbar navbar-dark bg-dark justify-content-between">
+    <a class="navbar-brand" class="userEmail">{{email}}</a>
+    <button class="btn btn-sm btn-outline-secondary text-white logoutBtn" type="button" (click)="logout()">Log out</button>
+  </nav>
+<div class="container">
+        <router-outlet></router-outlet>
+</div>
+</div>
